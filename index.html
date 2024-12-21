@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Sim OS</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="desktop">
+      <div class="icon" onclick="openWindow('notes')">
+        <img src="icons/notesicon.png" alt="Notes Icon">
+        <span>Notes</span>
+      </div>
+      <div class="icon" onclick="toggleFolder('allSimulations')">
+        <img src="icons/foldericon.png" alt="All Simulations">
+        <span>All Simulations</span>
+      </div>
+      
+      <!-- Folder for All Simulations -->
+      <div id="allSimulations" class="folder hidden">
+        <div class="icon" onclick="toggleFolder('mechanics')">
+          <img src="icons/foldericon.png" alt="Mechanics Folder">
+          <span>Mechanics</span>
+        </div>
+        <div class="icon" onclick="toggleFolder('electromagnetism')">
+          <img src="icons/foldericon.png" alt="Electromagnetism Folder">
+          <span>Electromagnetism</span>
+        </div>
+        <div class="icon" onclick="toggleFolder('optics')">
+          <img src="icons/foldericon.png" alt="Optics Folder">
+          <span>Optics</span>
+        </div>
+        <div class="icon" onclick="toggleFolder('generalPhysics')">
+          <img src="icons/foldericon.png" alt="General Physics Folder">
+          <span>General Physics</span>
+        </div>
+      </div>
+      
+      <!-- Subfolders -->
+      <div id="mechanics" class="folder hidden">
+        <div class="icon" onclick="openWindow('pendulumLab')">
+          <img src="icons/pendulumicon.png" alt="Pendulum Lab">
+          <span>Pendulum Lab</span>
+        </div>
+        <div class="icon" onclick="openWindow('singleSpring')">
+          <img src="icons/springicon.png" alt="Single Spring">
+          <span>Single Spring</span>
+        </div>
+        <div class="icon" onclick="openWindow('mutualAttraction')">
+          <img src="icons/attractionicon.png" alt="Mutual Attraction">
+          <span>Mutual Attraction</span>
+        </div>
+      </div>
+      
+      <div id="electromagnetism" class="folder hidden">
+        <div class="icon" onclick="openWindow('magnetsElectromagnets')">
+          <img src="icons/magneticon.png" alt="Magnets">
+          <span>Magnets & EM</span>
+        </div>
+        <div class="icon" onclick="openWindow('chargesField')">
+          <img src="icons/chargesicon.png" alt="Charges">
+          <span>Charges & Field</span>
+        </div>
+      </div>
+      
+      <div id="optics" class="folder hidden">
+        <div class="icon" onclick="openWindow('geometricOptics')">
+          <img src="icons/opticsicon.png" alt="Geometric Optics">
+          <span>Geometric Optics</span>
+        </div>
+        <div class="icon" onclick="openWindow('bendingLight')">
+          <img src="icons/bendingicon.png" alt="Bending Light">
+          <span>Bending Light</span>
+        </div>
+      </div>
+      
+      <div id="generalPhysics" class="folder hidden">
+        <div class="icon" onclick="openWindow('soundWave')">
+          <img src="icons/soundicon.png" alt="Sound Waves">
+          <span>Sound Waves</span>
+        </div>
+        <div class="icon" onclick="openWindow('blackbodySpectrum')">
+          <img src="icons/spectrumicon.png" alt="Blackbody Spectrum">
+          <span>Blackbody Spectrum</span>
+        </div>
+        <div class="icon" onclick="openWindow('rutherfordScattering')">
+          <img src="icons/rutherfordicon.png" alt="Rutherford">
+          <span>Rutherford Scattering</span>
+        </div>
+      </div>
+
+        
+    </div>
+
+   <script src="script.js"></script>
+
+</body>
+</html>
