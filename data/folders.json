@@ -1,0 +1,25 @@
+{
+    "folders": [
+      {
+        "name": "Mechanics",
+        "subfolders": [],
+        "simulations": ["Pendulum Lab", "Single Spring", "Mutual Attraction"]
+      },
+      {
+        "name": "Electromagnetism",
+        "subfolders": [],
+        "simulations": ["Magnets & Electromagnets", "Charges & Fields"]
+      },
+      {
+        "name": "Optics",
+        "subfolders": [],
+        "simulations": ["Geometric Optics", "Bending Light"]
+      },
+      {
+        "name": "General Physics",
+        "subfolders": [],
+        "simulations": ["Sound Waves", "Blackbody Spectrum", "Rutherford Scattering"]
+      }
+    ]
+  }
+  

@@ -9,21 +9,6 @@
             color: white;
         }
 
-        .loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 24px;
-            z-index: 1000;
-        }
-
         .hidden {
             display: none;
         }
@@ -39,6 +24,34 @@
             box-sizing: border-box;
         }
 
+        .window {
+          position: absolute;
+          width: 300px;
+          height: 200px;
+          border: 1px solid #ccc;
+          background: #fff;
+          resize: both;
+          overflow: hidden;
+      }
+      
+      .window.fullscreen {
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 9999;
+      }
+      
+      .window-header {
+          background: #007bff;
+          color: #fff;
+          padding: 5px;
+          cursor: move;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+      }
+      
         .icon {
             display: flex;
             flex-direction: column;
@@ -104,43 +117,8 @@
             height: 100%;
             border: none;
         }
- /* Loading Screen Styles */
-.loading-screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
 
-.progress-container {
-  width: 50%;
-  background: #444;
-  border-radius: 10px;
-  overflow: hidden;
-  position: relative;
-  padding: 10px;
-  text-align: center;
-}
 
-.progress-bar {
-  height: 20px;
-  background: #4caf50;
-  width: 0%;
-  transition: width 0.1s linear;
-  border-radius: 10px;
-}
-
-.progress-text {
-  margin-top: 10px;
-  color: #fff;
-  font-size: 18px;
-}
   .desktop {
     display: flex;
     flex-wrap: wrap;
@@ -167,7 +145,6 @@
     flex-wrap: wrap;
     gap: 10px;
   }
-
 
 
   .icon {
@@ -263,3 +240,14 @@
   gap: 10px;
   }
   
+  .resize-feedback {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}

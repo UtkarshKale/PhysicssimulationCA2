@@ -1,0 +1,55 @@
+{
+    "simulations": [
+      {
+        "name": "Pendulum Lab",
+        "url": "https://phet.colorado.edu/sims/html/pendulum-lab/latest/pendulum-lab_all.html",
+        "icon": "pendulumicon.png"
+      },
+      {
+        "name": "Single Spring",
+        "url": "https://www.myphysicslab.com/springs/single-spring-en.html",
+        "icon": "springicon.png"
+      },
+      {
+        "name": "Mutual Attraction",
+        "url": "https://www.myphysicslab.com/engine2D/mutual-attract-en.html",
+        "icon": "attractionicon.png"
+      },
+      {
+        "name": "Magnets & Electromagnets",
+        "url": "https://phet.colorado.edu/sims/html/magnets-and-electromagnets/latest/magnets-and-electromagnets_all.html",
+        "icon": "magneticon.png"
+      },
+      {
+        "name": "Charges & Fields",
+        "url": "https://phet.colorado.edu/sims/html/charges-and-fields/latest/charges-and-fields_all.html",
+        "icon": "chargesicon.png"
+      },
+      {
+        "name": "Geometric Optics",
+        "url": "https://phet.colorado.edu/sims/html/geometric-optics-basics/latest/geometric-optics-basics_all.html",
+        "icon": "opticsicon.png"
+      },
+      {
+        "name": "Bending Light",
+        "url": "https://phet.colorado.edu/sims/html/bending-light/latest/bending-light_all.html",
+        "icon": "bendingicon.png"
+      },
+      {
+        "name": "Sound Waves",
+        "url": "https://phet.colorado.edu/sims/html/sound-waves/latest/sound-waves_all.html",
+        "icon": "soundicon.png"
+      },
+      {
+        "name": "Blackbody Spectrum",
+        "url": "https://phet.colorado.edu/sims/html/blackbody-spectrum/latest/blackbody-spectrum_all.html",
+        "icon": "spectrumicon.png"
+      },
+      {
+        "name": "Rutherford Scattering",
+        "url": "https://phet.colorado.edu/sims/html/rutherford-scattering/latest/rutherford-scattering_all.html",
+        "icon": "rutherfordicon.png"
+      }
+    ]
+  }
+  
