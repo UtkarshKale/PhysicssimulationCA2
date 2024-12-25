@@ -32,6 +32,7 @@
           background: #fff;
           resize: both;
           overflow: hidden;
+          touch-action: none;
       }
       
       .window.fullscreen {
@@ -193,17 +194,26 @@
     align-items: center;
   }
   .window-header span {
-    font-size: 14px;
+    font-size: 20px;
+    color: black;
   }
   .window-body {
     flex-grow: 1;
     padding: 10px;
     overflow: hidden; /* Hide scrollbars of iframe outscribed window*/
+    width: 98%;
   }
-  .close-btn {
-    background: red;
+
+  .fullscreen-btn{
     border: none;
-    color: white;
+    cursor:zoom-in;
+    background-color: navajowhite
+  }
+  
+  .close-btn {
+    background: rgb(0, 0, 0);
+    border: none;
+    color: black;
     font-size: 12px;
     cursor: pointer;
     padding: 2px 6px;
@@ -251,3 +261,22 @@
     opacity: 0;
     transition: opacity 0.3s ease;
 }
+
+.resizer {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: gray;
+  cursor: nwse-resize;
+  touch-action: none;
+}
+
+.fullscreen {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
