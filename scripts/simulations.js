@@ -31,7 +31,7 @@ function openWindow(simName) {
         <div class="window-header">
             <span>${simName}</span>
             <div>
-                <button class="fullscreen-btn" onclick="toggleFullscreen(this)">🔳</button>
+                <button class="fullscreen-btn" onclick="toggleFullscreen(this)" >🔳</button>
                 <button class="close-btn" onclick="this.closest('.window').remove()">X</button>
             </div>
         </div>
@@ -48,6 +48,7 @@ function openWindow(simName) {
         windowElement.style.zIndex = ++zIndexCounter;
     });
 }
+
 
 function makeDraggable(element) {
     const header = element.querySelector('.window-header');
