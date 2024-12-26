@@ -346,13 +346,14 @@
   padding: 10px;
   position: absolute;
   display: flex;
+  justify-content: center;
   align-items: center;
   bottom: 100%;
-  right: 100%;
+  right: 10%;
   width: 100%;
-  font-size: 120px;
+  font-size: 220px;
   color: #fcfcfc;
-  opacity: 10%;
+  opacity: 50%;
 }
 
 /* Smooth progress bar animation */

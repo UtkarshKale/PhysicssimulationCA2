@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     const typingSpeed = 15; // Typing speed for logs
-    const totalDuration = 2000; // Total duration for progress bar (5 seconds)
+    const totalDuration = 2500; // Total duration for progress bar (5 seconds)
 
     let logIndex = 0;
 
