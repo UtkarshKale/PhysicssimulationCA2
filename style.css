@@ -280,3 +280,163 @@
   left: 0;
 }
 
+/* Bootscreen*/
+/* Boot Screen Styles */
+#boot-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  color: #00ff00;
+  font-family: 'VT323', monospace;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+.log-window {
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid #00ff00;
+  padding: 20px;
+  width: 60%;
+  max-width: 600px;
+  min-width: 300px;
+  height:fit-content;
+  box-shadow: 0 0 10px #000000;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+#boot-log {
+  white-space: pre-wrap;
+  height: 100%;
+  overflow-y: auto;
+}
+/* Smooth Progress Bar */
+.progress-container {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  width: 500px;
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #000000;
+}
+
+.progress-bar {
+  height: 5px;
+  width: 0;
+  background: #000000;
+  animation: smooth-progress 5s linear forwards;
+  flex-grow: 1;
+}
+
+.progress-text {
+  padding: 10px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  bottom: 100%;
+  right: 100%;
+  width: 100%;
+  font-size: 120px;
+  color: #fcfcfc;
+  opacity: 10%;
+}
+
+/* Smooth progress bar animation */
+@keyframes smooth-progress {
+  from {
+      width: 0%;
+  }
+  to {
+      width: 100%;
+  }
+}
+
+/* Search Bar Styles */
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  background: #000000;
+  border: 1px solid #8a8a8a;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+#search-bar {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #fff;
+  font-family: 'VT323', monospace;
+  font-size: 14px;
+  padding: 5px;
+  width: 200px;
+  transition: width 0.3s ease-in-out;
+}
+
+#search-bar:focus {
+  width: 300px;
+}
+
+#search-button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 5px;
+  transition: color 0.3s;
+}
+
+#search-button:hover {
+  color: #ffffff;
+}
+
+/* Popup Message Styling */
+#popup-message {
+  animation: fade-in-out 3s ease-in-out;
+}
+
+/* Fade In-Out Animation */
+@keyframes fade-in-out {
+  0% {
+      opacity: 0;
+      transform: translateY(-10px);
+  }
+  10% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+  90% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+  100% {
+      opacity: 0;
+      transform: translateY(-10px);
+  }
+}
