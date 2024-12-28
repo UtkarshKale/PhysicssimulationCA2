@@ -3,7 +3,7 @@
         body {
             margin: 0;
             padding: 0;
-            background: url('background.jpg') no-repeat center center fixed;
+            background: url('./icons/background1.jpg') no-repeat center center fixed;
             background-size: cover;
             font-family: 'VT323', monospace;
             color: white;
@@ -349,11 +349,10 @@
   justify-content: center;
   align-items: center;
   bottom: 100%;
-  right: 10%;
+  right: -25%;
   width: 100%;
   font-size: 220px;
   color: #fcfcfc;
-  opacity: 50%;
 }
 
 /* Smooth progress bar animation */
@@ -371,7 +370,7 @@ header {
   position: fixed;
   top: 0;
   right: 0;
-  width: 100%;
+  width: 20%;
   display: flex;
   justify-content: flex-end;
   padding: 10px;
