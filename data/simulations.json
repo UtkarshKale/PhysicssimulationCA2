@@ -49,6 +49,12 @@
         "name": "Rutherford Scattering",
         "url": "https://phet.colorado.edu/sims/html/rutherford-scattering/latest/rutherford-scattering_all.html",
         "icon": "rutherfordicon.png"
+      },
+      {
+        "name": "Notes",
+        "url": "notes.html",
+        "icon": "notesicon.png",
+        "type": "local_app"
       }
     ]
   }
