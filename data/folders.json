@@ -18,7 +18,7 @@
       {
         "name": "General Physics",
         "subfolders": [],
-        "simulations": ["Sound Waves", "Blackbody Spectrum", "Rutherford Scattering", "Notes"]
+        "simulations": ["Sound Waves", "Blackbody Spectrum", "Rutherford Scattering"]
       }
     ]
   }

@@ -2,9 +2,6 @@
 
 let openFolderId = null; // Tracks the currently open folder
 
-/**
- * Loads the folder structure from 'data/folders.json' and populates the desktop.
- */
 async function loadFolderStructure() {
     try {
         const response = await fetch('data/folders.json');
@@ -18,15 +15,10 @@ async function loadFolderStructure() {
         // Close folders on desktop click
         document.addEventListener('click', closeAllFolders);
     } catch (error) {
-        handleError('Error loading folders:', error); // Updated to use the new global handleError
+        handleError('Error loading folders', error);
     }
 }
 
-/**
- * Creates a folder or subfolder icon and its corresponding content container.
- * @param {object} folder - The folder data object.
- * @param {HTMLElement} parentElement - The HTML element to append the folder to.
- */
 function createFolder(folder, parentElement) {
     const folderElement = document.createElement('div');
     folderElement.className = 'icon';
