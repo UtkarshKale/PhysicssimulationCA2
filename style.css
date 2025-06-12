@@ -1,256 +1,196 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
-        body {
-            margin: 0;
-            padding: 0;
-            background: url('./icons/background.jpg') no-repeat center center fixed;
-            background-size: cover;
-            font-family: 'VT323', monospace;
-            color: white;
-        }
+body {
+    margin: 0;
+    padding: 0;
+    background: url('./icons/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'VT323', monospace;
+    color: white;
+}
 
-        .hidden {
-            display: none;
-        }
+.hidden {
+    display: none !important; /* Ensuring it always hides */
+}
 
-        .desktop {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            flex-wrap: wrap;
-            align-content: flex-start;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        .window {
-          position: absolute;
-          width: 300px;
-          height: 200px;
-          border: 1px solid #ccc;
-          background: #fff;
-          resize: both;
-          overflow: hidden;
-          touch-action: none;
-      }
-      
-      .window.fullscreen {
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          z-index: 9999;
-      }
-      
-      .window-header {
-          background: #007bff;
-          color: #fff;
-          padding: 5px;
-          cursor: move;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-      }
-      
-        .icon {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            margin: 10px;
-            cursor: pointer;
-        }
-
-        .icon img {
-            width: 64px;
-            height: 64px;
-        }
-
-        .icon span {
-            margin-top: 5px;
-            font-size: 14px;
-        }
-
-        .folder, .window {
-            position: absolute;
-            top: 100px;
-            left: 100px;
-            background: rgba(0, 0, 0, 0.8);
-            border: 1px solid #555;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            overflow: hidden;
-            cursor: grab;
-        }
-
-        .folder-header, .window-header {
-            background: #444;
-            padding: 10px;
-            font-size: 16px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: grab;
-        }
-
-        .folder-content {
-            padding: 10px;
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .folder .close-btn, .window .close-btn {
-            background: none;
-            border: none;
-            color: white;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        .window-body {
-            width: 100%;
-            height: calc(100% - 40px);
-        }
-
-        .window-body iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-
-  .desktop {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
-    height: 100vh;
-    box-sizing: border-box;
+.desktop {
     position: relative;
-  }
-
-  .hidden {
-    display: none;
-  }
-  
-  .subfolder{
-    position: absolute;
-    top: 20%;
-    left: 25%;
-    background: #222;
-    border: 1px solid #444;
-    padding: 10px;
-    border-radius: 8px;
+    width: 100%;
+    height: 100vh;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-  }
+    align-content: flex-start; /* Aligns items to the start for better control */
+    gap: 20px; /* From the second .desktop definition */
+    padding: 20px;
+    box-sizing: border-box;
+}
 
-
-  .icon {
+/* Icon Styles */
+.icon {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80px;
-    cursor: pointer;
-    color: rgb(0, 0, 0);
     text-align: center;
-    height: min-content;
-  }
-  .icon img {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 5px;
-  }
+    width: 80px; /* Standardized width */
+    margin: 10px; /* From first definition */
+    cursor: pointer;
+    height: min-content; /* Adjusts height to content */
+    /* color: rgb(0, 0, 0); Removed as icon span color is white, better for visibility */
+}
 
-  .icon span {
-    display: block;
-    margin-top: 8px;
-    color: white;
-    font-size: 14px;
-  }
+.icon img {
+    width: 50px; /* Standardized from second definition */
+    height: 50px; /* Standardized from second definition */
+    margin-bottom: 5px; /* From second definition */
+}
 
-  .window {
-    /*window where apps are opened*/
-    position: absolute;
-    border: 2px solid #444;
-    background-color: antiquewhite;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    resize: both;
-    overflow: hidden;
-  }
-  .window-header {
-    background-color:navajowhite;
-    color: white;
-    padding: 8px;
-    cursor: move;
-    user-select: none;
+.icon span {
+    margin-top: 8px; /* From second definition */
+    font-size: 14px; /* Consistent font size */
+    color: white; /* Ensuring visibility */
+    display: block; /* From second definition */
+}
+
+/* Window Styles */
+.window {
+    position: absolute; /* Shared characteristic */
+    top: 100px; /* Default position from .folder, .window */
+    left: 100px; /* Default position from .folder, .window */
+    width: 300px; /* Default width from first .window */
+    height: 200px; /* Default height from first .window */
+    border: 2px solid #444; /* From second .window, more specific */
+    background-color: antiquewhite; /* From second .window */
+    border-radius: 8px; /* From second .window and .folder, .window */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* From second .window, more specific */
+    display: flex; /* From second .window */
+    flex-direction: column; /* From second .window */
+    resize: both; /* From first .window */
+    overflow: hidden; /* Shared characteristic */
+    touch-action: none; /* From first window, for touch devices */
+    cursor: grab; /* From .folder, .window */
+}
+
+.window.fullscreen {
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important; /* More robust than 100% */
+    height: 100vh !important; /* More robust than 100% */
+    z-index: 9999;
+    border-radius: 0; /* No rounded corners in fullscreen */
+}
+
+.window-header {
+    background-color: navajowhite; /* From second .window-header */
+    color: black; /* For text, derived from second .window-header span */
+    padding: 8px; /* From second .window-header */
+    cursor: grab; /* Standardized from .folder-header, .window-header and others */
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  .window-header span {
-    font-size: 20px;
-    color: black;
-  }
-  .window-body {
-    flex-grow: 1;
+    user-select: none; /* From second .window-header */
+    font-size: 16px; /* From .folder-header, .window-header */
+}
+
+.window-header span { /* Title text in header */
+    font-size: 20px; /* From second .window-header span */
+    color: black; /* From second .window-header span */
+}
+
+.window-body {
+    flex-grow: 1; /* Allows body to take available space */
+    padding: 10px; /* From second .window-body */
+    overflow: auto; /* Changed from hidden to auto to allow scrolling if iframe content is larger */
+    /* width: 98%; Removed, let flexbox handle width with padding accounted for */
+    /* height: calc(100% - 40px); Let flexbox handle height */
+}
+
+.window-body iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Folder Styles */
+.folder {
+    position: absolute; /* Shared with .window */
+    top: 100px; /* Default position from .folder, .window */
+    left: 100px; /* Default position from .folder, .window */
+    background: rgba(0, 0, 0, 0.8); /* From .folder, .window, more specific than the other .folder bg */
+    border: 1px solid #555; /* From .folder, .window */
+    border-radius: 8px; /* From .folder, .window */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* From .folder, .window */
+    overflow: hidden; /* Shared characteristic */
+    cursor: grab; /* Shared characteristic */
+    display: flex; /* From second .folder definition for internal layout */
+    flex-direction: column; /* Stack header and content */
+    /* gap: 10px; Not for the main folder container, but for folder-content */
+    padding: 0; /* Padding will be handled by header/content */
+    /* margin-top: 10px; This was on the second .folder, remove for consistency */
+    width: 300px; /* Default width, can be overridden */
+    min-height: 150px; /* Minimum height */
+}
+
+.folder-header {
+    background: #444; /* Shared style from .folder-header, .window-header */
+    color: white; /* Added for better visibility */
     padding: 10px;
-    overflow: hidden; /* Hide scrollbars of iframe outscribed window*/
-    width: 98%;
-  }
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: grab;
+}
 
-  .fullscreen-btn{
-    border: none;
-    cursor:zoom-in;
-    background-color: navajowhite
-  }
-  
-  .close-btn {
-    background: rgb(0, 0, 0);
-    border: none;
-    color: black;
-    font-size: 12px;
-    cursor: pointer;
-    padding: 2px 6px;
-    border-radius: 3px;
-  }
-  .close-btn:hover {
-    background: darkred;
-  }
+.folder-content {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Spacing for items within the folder */
+    flex-grow: 1; /* Allow content to fill space */
+    overflow-y: auto; /* Scroll for overflow */
+}
 
-  .folder {
+/* Subfolder Styles */
+.subfolder {
+    /* position: absolute; Removed, should be relative to parent folder content flow */
+    /* top: 20%; Removed */
+    /* left: 25%; Removed */
+    background: #222;
+    border: 1px solid #444;
+    padding: 10px;
+    border-radius: 8px;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    padding: 10px;
-    margin-top: 10px;
-    background: #222;
-    border: 1px solid #444;
-    border-radius: 5px;
-  }
-  .hidden {
-    display: none;
-  }
-  
-  .subfolder{
-    position: absolute;
-    top: 20%;
-    left: 25%;
-    background: #222;
-  border: 1px solid #444;
-  padding: 10px;
-  border-radius: 8px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  }
-  
-  .resize-feedback {
+    margin: 5px; /* Added margin to distinguish from items */
+    width: calc(100% - 10px); /* Take full width of parent minus margins */
+}
+
+/* Button Styles */
+.close-btn { /* Applies to both .window .close-btn and .folder .close-btn */
+    background: #333; /* From second .close-btn, seems more intentional */
+    border: none;
+    color: white; /* Standardized from first version for visibility */
+    font-size: 12px; /* From second .close-btn */
+    cursor: pointer;
+    padding: 2px 6px; /* From second .close-btn */
+    border-radius: 3px; /* From second .close-btn */
+}
+
+.close-btn:hover {
+    background: darkred; /* From second .close-btn */
+    color: white; /* Ensure text remains white on hover */
+}
+
+.fullscreen-btn {
+    border: none;
+    cursor: zoom-in;
+    background-color: transparent; /* Make background transparent */
+    color: black; /* Icon color, assuming it's text or SVG */
+    padding: 0 5px; /* Minimal padding */
+}
+
+.resize-feedback {
     position: absolute;
     background: rgba(0, 0, 0, 0.7);
     color: white;
@@ -263,180 +203,214 @@
 }
 
 .resizer {
-  width: 10px;
-  height: 10px;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  background: gray;
-  cursor: nwse-resize;
-  touch-action: none;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: gray;
+    cursor: nwse-resize;
+    touch-action: none;
 }
 
-.fullscreen {
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-}
+/* Removed general .fullscreen as it's combined with .window.fullscreen */
 
-/* Bootscreen*/
 /* Boot Screen Styles */
 #boot-screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #000;
-  color: #00ff00;
-  font-family: 'VT323', monospace;
-  font-size: 14px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  opacity: 1;
-  transition: opacity 1s ease-in-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    color: #00ff00;
+    font-family: 'VT323', monospace;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
 }
 
 .log-window {
-  background: rgba(0, 0, 0, 0.8);
-  border: 2px solid #00ff00;
-  padding: 20px;
-  width: 60%;
-  max-width: 600px;
-  min-width: 300px;
-  height:fit-content;
-  box-shadow: 0 0 10px #000000;
-  overflow-y: auto;
-  margin-bottom: 20px;
-  overflow: hidden;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #00ff00;
+    padding: 20px;
+    width: 60%;
+    max-width: 600px;
+    min-width: 300px;
+    height: fit-content;
+    box-shadow: 0 0 10px #000000;
+    overflow-y: auto; /* Changed from hidden for consistency */
+    margin-bottom: 20px;
+    /* overflow: hidden; Redundant due to overflow-y */
 }
 
 #boot-log {
-  white-space: pre-wrap;
-  height: 100%;
-  overflow-y: auto;
+    white-space: pre-wrap;
+    height: 100%; /* Should be fine if log-window has fit-content */
+    overflow-y: auto;
 }
+
 /* Smooth Progress Bar */
 .progress-container {
-  position: absolute;
-  bottom: 50px;
-  right: 50px;
-  width: 500px;
-  display: flex;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.8);
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px #000000;
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    width: 500px;
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #000000;
 }
 
 .progress-bar {
-  height: 5px;
-  width: 0;
-  background: #000000;
-  animation: smooth-progress 5s linear forwards;
-  flex-grow: 1;
+    height: 5px;
+    width: 0; /* JS will control this */
+    background: #00ff00; /* Changed to green to match boot screen theme */
+    /* animation: smooth-progress 5s linear forwards; Will be controlled by JS */
+    flex-grow: 1;
 }
 
 .progress-text {
-  padding: 10px;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  bottom: 100%;
-  right: -25%;
-  width: 100%;
-  font-size: 220px;
-  color: #fcfcfc;
+    padding: 10px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 70px; /* Adjusted for better placement above the bar */
+    left: 50%;
+    transform: translateX(-50%); /* Centering */
+    width: auto; /* Fit content */
+    font-size: 120px; /* Reduced for better aesthetics */
+    color: #fcfcfc;
 }
 
-/* Smooth progress bar animation */
-@keyframes smooth-progress {
-  from {
-      width: 0%;
-  }
-  to {
-      width: 100%;
-  }
+@keyframes smooth-progress { /* Keep for JS if it uses class-based animation trigger */
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
 }
 
 /* Search Bar Styles */
-header {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 20%;
-  display: flex;
-  justify-content: flex-end;
-  padding: 10px;
-  z-index: 1000;
+header { /* This acts as a container for the search bar at the top right */
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: auto; /* Adjust width to content */
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    z-index: 1000; /* Ensure it's above most elements but below fullscreen windows/popups */
 }
 
 .search-container {
-  display: flex;
-  align-items: center;
-  background: #000000;
-  border: 1px solid #8a8a8a;
-  border-radius: 5px;
-  padding: 5px;
+    display: flex;
+    align-items: center;
+    background: #000000;
+    border: 1px solid #8a8a8a;
+    border-radius: 5px;
+    padding: 5px;
 }
 
 #search-bar {
-  border: none;
-  outline: none;
-  background: transparent;
-  color: #fff;
-  font-family: 'VT323', monospace;
-  font-size: 14px;
-  padding: 5px;
-  width: 200px;
-  transition: width 0.3s ease-in-out;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #fff;
+    font-family: 'VT323', monospace; /* Explicitly set font */
+    font-size: 14px;
+    padding: 5px;
+    width: 200px;
+    transition: width 0.3s ease-in-out;
 }
 
 #search-bar:focus {
-  width: 300px;
+    width: 300px;
 }
 
 #search-button {
-  background: none;
-  border: none;
-  color: #ffffff;
-  cursor: pointer;
-  font-size: 18px;
-  padding: 5px;
-  transition: color 0.3s;
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 5px;
+    transition: color 0.3s;
 }
 
 #search-button:hover {
-  color: #ffffff;
+    color: #00ff00; /* Changed to green for consistency with theme */
 }
 
-/* Popup Message Styling */
+/* Search Results - Moved from JS inline styles */
+#search-results {
+    position: absolute;
+    top: 50px; /* Position below search bar */
+    right: 10px; /* Align with search bar container */
+    background: rgba(0, 0, 0, 0.9);
+    color: #00ff00; /* Theme consistent color */
+    padding: 10px;
+    border: 1px solid #00ff00; /* Theme consistent border */
+    border-radius: 5px;
+    z-index: 1001; /* Above search bar, below critical popups */
+    font-family: 'VT323', monospace; /* Ensure font consistency */
+    min-width: 250px; /* Minimum width for readability */
+}
+
+#search-results div { /* Style for individual result items */
+    cursor: pointer;
+    padding: 5px 0;
+    border-bottom: 1px dashed #003300; /* Separator */
+}
+
+#search-results div:last-child {
+    border-bottom: none; /* No border for the last item */
+}
+
+#search-results div:hover {
+    background-color: #111; /* Subtle hover effect */
+    color: #00aa00;
+}
+
+/* Popup Message Styling - Moved from JS inline styles & existing CSS */
 #popup-message {
-  animation: fade-in-out 3s ease-in-out;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1002; /* High z-index to be on top of most things */
+    font-family: 'VT323', monospace; /* Ensure font consistency */
+    animation: fade-in-out 3s ease-in-out forwards; /* Ensure it stays hidden after animation */
 }
 
-/* Fade In-Out Animation */
 @keyframes fade-in-out {
-  0% {
-      opacity: 0;
-      transform: translateY(-10px);
-  }
-  10% {
-      opacity: 1;
-      transform: translateY(0);
-  }
-  90% {
-      opacity: 1;
-      transform: translateY(0);
-  }
-  100% {
-      opacity: 0;
-      transform: translateY(-10px);
-  }
+    0% {
+        opacity: 0;
+        transform: translateY(-20px); /* Start slightly above */
+    }
+    10% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    90% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px); /* End slightly above */
+    }
 }

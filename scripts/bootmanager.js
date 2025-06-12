@@ -1,11 +1,11 @@
 // bootmanager.js
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
 
     // Create the boot screen
-    const bootScreen = document.createElement("div");
-    bootScreen.id = "boot-screen";
+    const bootScreen = document.createElement('div');
+    bootScreen.id = 'boot-screen';
 
     bootScreen.innerHTML = `
         <div class="log-window">
@@ -19,17 +19,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     body.appendChild(bootScreen);
 
-    const log = document.getElementById("boot-log");
-    const progressBar = document.querySelector(".progress-bar");
-    const progressText = document.querySelector(".progress-text");
+    const log = document.getElementById('boot-log');
+    const progressBar = document.querySelector('.progress-bar');
+    const progressText = document.querySelector('.progress-text');
 
     // Logs for the typing effect
     const logs = [
-        "[INFO] Initializing system...",
-        "[INFO] Loading core modules...",
-        "[INFO] Bootstrapping interface...",
-        "[SUCCESS] Environment ready!",
-        "[System] Welcome",
+        '[INFO] Initializing system...',
+        '[INFO] Loading core modules...',
+        '[INFO] Bootstrapping interface...',
+        '[SUCCESS] Environment ready!',
+        '[System] Welcome',
     ];
 
     const typingSpeed = 15; // Typing speed for logs
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 log.textContent += text[charIndex++];
             } else {
                 clearInterval(typeInterval);
-                log.textContent += "\n";
+                log.textContent += '\n';
                 if (callback) callback();
             }
         }, typingSpeed);
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Fade out boot screen after completion
     const fadeOutBootScreen = () => {
-        bootScreen.style.opacity = "0";
+        bootScreen.style.opacity = '0';
         setTimeout(() => {
             bootScreen.remove();
         }, 1000); // Fade out duration
